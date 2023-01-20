@@ -1,65 +1,158 @@
-let pmsg = 0
+let rn = 0
 input.onButtonPressed(Button.A, function () {
-    pmsg = randint(1, 3)
-    if (pmsg == 1) {
-        music.playMelody("G F G F G A B C5 ", 140)
-        basic.showString("You got this!")
-    } else if (pmsg == 2) {
-        music.playMelody("E G - F A - E B ", 140)
-        basic.showString("You can do it!")
-    } else if (pmsg == 3) {
-        music.playMelody("C D A F C5 G C5 A ", 140)
-        basic.showString("You are awesome!")
-    }
-})
-input.onButtonPressed(Button.B, function () {
-    basic.showLeds(`
+    for (let index = 0; index < 3; index++) {
+        basic.showLeds(`
         . # . # .
         . # . # .
         . . . . .
         # . . . #
         . # # # .
-        `)
-    basic.showLeds(`
+        `,200)
+basic.showLeds(`
         . . . # .
         # # . # .
         . . . . .
         # . . . #
         . # # # .
-        `)
-    basic.showLeds(`
+        `,200)
+basic.showLeds(`
         . # . # .
         . # . # .
         . . . . .
         # . . . #
         . # # # .
-        `)
-    basic.showLeds(`
+        `,200)
+basic.showLeds(`
         . # . . .
         . # . # #
         . . . . .
         # . . . #
         . # # # .
-        `)
-    basic.showLeds(`
+        `,200)
+basic.showLeds(`
         . # . # .
         . # . # .
         . . . . .
         # . . . #
         . # # # .
-        `)
-    basic.showLeds(`
+        `,200)
+basic.showLeds(`
         . . . . .
         # # . # #
         . . . . .
         # . . . #
         . # # # .
-        `)
+        `,200)
+basic.showLeds(`
+            . # . # .
+            . # . # .
+            . . . . .
+            # . . . #
+            . # # # .
+            `,200)
+    }
+})
+input.onButtonPressed(Button.AB, function () {
     basic.showLeds(`
         . # . # .
         . # . # .
         . . . . .
         # . . . #
         . # # # .
-        `)
+        `,500)
+basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . # . .
+        . . . . .
+        . . . . .
+        `,150)
+basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . # . .
+        . # . # .
+        . . . . .
+        `,150)
+basic.showLeds(`
+        # . # . #
+        . # . # .
+        # . # . #
+        . # . # .
+        # . # . #
+        `,150)
+basic.showLeds(`
+        . # . # .
+        # . # . #
+        . # . # .
+        # . # . #
+        . # . # .
+        `,150)
+basic.showLeds(`
+        # . # . #
+        . # . # .
+        # . # . #
+        . # . # .
+        # . # . #   
+        `,150)
+basic.showLeds(`
+        . # . # .
+        # . # . #
+        . # . # .
+        # . # . #
+        . # . # .
+        `, 150)
+basic.showLeds(`
+        # . # . #
+        . # . # .
+        # . # . #
+        . # . # .
+        # . # . #   
+        `, 150)
+basic.showLeds(`
+        . # . # .
+        . # . # .
+        . . . . .
+        . # # # .
+        # . . . #
+        `,500)
+basic.clearScreen()
+})
+input.onButtonPressed(Button.B, function () {
+    for (let index = 0; index < 4; index++) {
+        basic.showString("A",5)
+basic.showString("B",5)
+basic.showString("C",5)
+basic.showString("D",5)
+    }
+    rn += randint(1, 8)
+    if (rn == 1) {
+        basic.showString("A")
+    } else if (rn == 2) {
+        basic.showString("B")
+    } else if (rn == 3) {
+        basic.showString("C")
+    } else if (rn == 4) {
+        basic.showString("D")
+    } else if (rn == 5) {
+        basic.showString("A")
+    } else if (rn == 6) {
+        basic.showString("B")
+    } else if (rn == 7) {
+        basic.showString("C")
+    } else {
+        basic.showString("D")
+    }
+})
+basic.forever(function () {
+    while (input.logoIsPressed()) {
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+    }
+    basic.clearScreen()
 })
